@@ -1,5 +1,6 @@
 class Building < ActiveRecord::Base
   belongs_to :territory
+  has_many :apartments
   
   validates :address, 
     :presence => true,

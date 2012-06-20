@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Number:</b>
+  <%= @apartment.number %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @apartment.owner %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @apartment.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @apartment.phone %>
+</p>
+
+<p>
+  <b>Last Visited:</b>
+  <%= @apartment.last_visited %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @apartment.notes %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_building_apartment_path(@building, @apartment) %> |
+<%= link_to 'Back', building_apartments_path(@building) %>

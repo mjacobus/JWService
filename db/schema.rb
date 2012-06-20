@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620013434) do
+ActiveRecord::Schema.define(:version => 20120620023512) do
+
+  create_table "apartments", :force => true do |t|
+    t.string   "number"
+    t.string   "owner"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "notes"
+    t.date     "last_visited"
+    t.integer  "building_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "apartments", ["building_id"], :name => "index_apartments_on_building_id"
 
   create_table "buildings", :force => true do |t|
     t.string   "address"
