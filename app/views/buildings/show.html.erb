@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Territory:</b>
+  <%= @building.territory %>
+</p>
+
+<p>
   <b>Address:</b>
   <%= @building.address %>
 </p>
@@ -15,11 +20,15 @@
   <%= @building.description %>
 </p>
 
-<p>
-  <b>Territory:</b>
-  <%= @building.territory %>
-</p>
+<h2>Apartments</h2>
+
+<%= render :partial => "apartments/list", :locals => {
+  :building => @building,
+  :apartments => @building.apartments.order(:number)
+} %>
+
 
 
 <%= link_to 'Edit', edit_building_path(@building) %> |
 <%= link_to 'Back', buildings_path %>
+

@@ -59,7 +59,7 @@ describe ApartmentsController do
 
       it "redirects to the created apartment" do
         post :create, {:building_id => @building.id, :apartment => valid_attributes}, valid_session
-        response.should redirect_to(building_apartment_url(@building,Apartment.last))
+        response.should redirect_to Apartment.last.building
       end
     end
 
@@ -94,7 +94,7 @@ describe ApartmentsController do
 
       it "redirects to the apartment" do
         put :update, {:building_id => @building.id, :id => @apartment.to_param, :apartment => valid_attributes}, valid_session
-        response.should redirect_to(building_apartment_url(@building,@apartment))
+        response.should redirect_to @building
       end
     end
 
@@ -124,7 +124,7 @@ describe ApartmentsController do
 
     it "redirects to the apartments list" do
       delete :destroy, {:building_id => @building.id, :id => @apartment.to_param}, valid_session
-      response.should redirect_to(building_apartments_url(@apartment.building))
+      response.should redirect_to @apartment.building
     end
   end
 

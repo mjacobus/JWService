@@ -48,7 +48,7 @@ class ApartmentsController < ApplicationController
 
     respond_to do |format|
       if @apartment.save
-        format.html { redirect_to building_apartment_url(@building, @apartment), notice: 'Apartment was successfully created.' }
+        format.html { redirect_to @building, notice: 'Apartment was successfully created.' }
         format.json { render json: @apartment, status: :created, location: @apartment }
       else
         format.html { render action: "new" }
@@ -64,7 +64,7 @@ class ApartmentsController < ApplicationController
 
     respond_to do |format|
       if @apartment.update_attributes(params[:apartment])
-        format.html { redirect_to building_apartment_url(@building, @apartment), notice: 'Apartment was successfully updated.' }
+        format.html { redirect_to building_url(@building), notice: 'Apartment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -80,7 +80,7 @@ class ApartmentsController < ApplicationController
     @apartment.destroy
 
     respond_to do |format|
-      format.html { redirect_to building_apartments_url(@building) }
+      format.html { redirect_to @building, notice: 'Apartment was successfully removed.'}
       format.json { head :no_content }
     end
   end
