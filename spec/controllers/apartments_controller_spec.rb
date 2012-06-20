@@ -8,7 +8,7 @@ describe ApartmentsController do
   end
 
   def valid_attributes
-    {}
+    Factory.build(:apartment, :building => @building).attributes
   end
   
   def valid_session
