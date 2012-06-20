@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "apartments/show" do
+describe "buildings/show" do
   before(:each) do
-    @apartment = assign(:apartment, stub_model(Apartment,
+    @building = assign(:building, stub_model(Building,
       :address => "Address",
       :number => "Number",
       :description => "MyText",

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20120620013434) do
 
-  create_table "apartments", :force => true do |t|
+  create_table "buildings", :force => true do |t|
     t.string   "address"
     t.string   "number"
     t.text     "description"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20120620013434) do
     t.datetime "updated_at",   :null => false
   end
 
-  add_index "apartments", ["territory_id"], :name => "index_apartments_on_territory_id"
+  add_index "buildings", ["territory_id"], :name => "index_buildings_on_territory_id"
 
   create_table "territories", :force => true do |t|
     t.string   "name"

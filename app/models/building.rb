@@ -1,4 +1,4 @@
-class Apartment < ActiveRecord::Base
+class Building < ActiveRecord::Base
   belongs_to :territory
   
   validates :address, 

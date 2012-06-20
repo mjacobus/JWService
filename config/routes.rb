@@ -1,5 +1,5 @@
 JWService::Application.routes.draw do
-  resources :apartments
+  resources :buildings
 
   resources :territories
 
