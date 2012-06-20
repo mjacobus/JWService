@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620011807) do
+ActiveRecord::Schema.define(:version => 20120620013434) do
+
+  create_table "apartments", :force => true do |t|
+    t.string   "address"
+    t.string   "number"
+    t.text     "description"
+    t.integer  "territory_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "apartments", ["territory_id"], :name => "index_apartments_on_territory_id"
 
   create_table "territories", :force => true do |t|
     t.string   "name"

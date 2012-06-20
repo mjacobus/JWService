@@ -1,4 +1,6 @@
 JWService::Application.routes.draw do
+  resources :apartments
+
   resources :territories
 
   # The priority is based upon order of creation:
