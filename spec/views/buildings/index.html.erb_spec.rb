@@ -7,13 +7,15 @@ describe "buildings/index" do
         :address => "Address",
         :number => "Number",
         :description => "MyText",
-        :territory => nil
+        :territory => nil,
+        :created_at => Time.now,
       ),
       stub_model(Building,
         :address => "Address",
         :number => "Number",
         :description => "MyText",
-        :territory => nil
+        :territory => nil,
+        :created_at => Time.now,
       )
     ])
   end
