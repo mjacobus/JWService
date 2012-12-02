@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# territories
+1.upto(10) do |t|
+  territory = Territory.find_or_create_by_name("T#{t}")
+
+  # buildings  
+  1.upto(10) do |b|
+    building = Building.find_or_create_by_number_and_territory_id({
+      number: b,
+      territory_id: territory.id,
+      address: "Street number #{b}"
+    })
+    
+    # floors
+    1.upto(10) do |f|
+      # apartments
+      1.upto(4) do |a|
+        Apartment.find_or_create_by_number_and_building_id({
+          building_id: building.id,
+          number: "#{f}#{a}".to_i
+        })
+      end
+    end
+  end
+end
