@@ -26,5 +26,9 @@ describe Building do
       @new_building.should have(1).errors_on(:address)
     end
   end
+  
+  describe "destroying" do
+    it "should destroy apartaments"
+  end
 
 end
