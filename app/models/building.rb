@@ -1,6 +1,6 @@
 class Building < ActiveRecord::Base
   belongs_to :territory
-  has_many :apartments
+  has_many :apartments, order: 'number ASC'
   
   validates :address, 
     :presence => true,
