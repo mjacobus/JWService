@@ -24,6 +24,11 @@ describe BuildingsController do
       get :show, {:id => building.to_param}, valid_session
       assigns(:building).should eq(building)
     end
+    
+    it "filter visited apartments"
+    it "filter unvisited apartments"
+    it "filter to visit apartments"
+    
   end
 
   describe "GET new" do

@@ -11,7 +11,28 @@
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @building.description %>&nbsp;</dd>
   <dt><strong><%= model_class.human_attribute_name(:territory_id) %>:</strong></dt>
-  <dd><%= @building.territory %></dd>
+  <dd><strong><%= @building.territory %></dd>
+  
+  <dt><strong><%= t 'view.apartments'%></strong></dt>
+  <dd><%= @building.apartments.length %> <%= link_to t('helpers.links.filter'), building_path(@building,{filter: nil}) %></dd>
+  
+  <dt><strong><%= t 'view.visited'%></strong></dt>
+  <dd><%= @building.apartments.visited.length %> <%= link_to t('helpers.links.filter'), building_path(@building,{filter: :visited}) %></dd>
+  
+  <dt><strong><%= t 'view.unvisited'%></strong></dt>
+  <dd><%= @building.apartments.unvisited.length %> <%= link_to t('helpers.links.filter'), building_path(@building,{filter: :unvisited}) %></dd>  
+  
+  <dt><strong><%= t 'view.to_revisit'%></strong></dt>
+  <dd><%= @building.apartments.to_revisit.length %> <%= link_to t('helpers.links.filter'), building_path(@building,{filter: :to_revisit}) %></dd>  
+  
+  <dt><strong><%= t 'view.coverage'%></strong></dt>
+  <dd>
+    <div class="coverage">
+      <div class="bar">
+        <div class="progress" style="width:<%= @building.coverage %>%;"></div>
+      </div><%= @building.coverage %>%
+    </div>
+  </dd>
 </dl>
 
 <div class="form-actions">
@@ -26,5 +47,4 @@
               :class => 'btn btn-danger' %>
 </div>
 
-<% @apartments = @building.apartments  %>
 <%= render template: "apartments/index" %>
