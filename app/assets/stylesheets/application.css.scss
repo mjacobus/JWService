@@ -34,8 +34,9 @@
   float:left;
   border-radius: 5px;
   line-height: 10px;
-  height: 10px;
+  min-height: 10px;
   color: gray;
+  text-align: center;
   
   .bar {
     background: red;
@@ -52,4 +53,8 @@
     float: left;
     border-radius: 5px;
   }
+}
+
+.center {
+  text-align: center !important;
 }
