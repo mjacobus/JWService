@@ -14,6 +14,17 @@ class BuildingsController < ApplicationController
   # GET /buildings/1.json
   def show
     @building = Building.find(params[:id])
+    
+    if params[:filter] == 'visited'
+      @apartments = @building.apartments.visited
+    elsif params[:filter] == 'unvisited'
+      @apartments = @building.apartments.unvisited
+    elsif params[:filter] == 'to_revisit'
+      @apartments = @building.apartments.to_revisit
+    else
+      @apartments = @building.apartments
+    end
+    
 
     respond_to do |format|
       format.html # show.html.erb

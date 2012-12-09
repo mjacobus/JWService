@@ -1,14 +1,13 @@
 <%- model_class = Apartment -%>
 <div class="page-header">
-  <h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2>
+  <h2><%=t '.title', :default => model_class.model_name.human.pluralize %> (<%= @apartments.length %>)</h2>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:number) %></th>
-      <th><%= model_class.human_attribute_name(:owner) %></th>
-      <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:phone) %></th>
+      <th><%= model_class.human_attribute_name(:visited) %></th>
+      <th><%= model_class.human_attribute_name(:revisit) %></th>
       <th><%= model_class.human_attribute_name(:notes) %></th>
       <th><%= model_class.human_attribute_name(:last_visited) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>

@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe Building do
-  before(:each) do
+  subject { @building }
+  
+  before do
     @building = Factory(:building)
   end
 
@@ -29,6 +31,22 @@ describe Building do
   
   describe "destroying" do
     it "should destroy apartaments"
+  end
+
+
+  
+  describe "#coverage" do
+    before do
+      
+    end
+    
+    it "should get the percent value of its visited appartments" do
+      3.times { Factory(:apartment, building: @building, visited: true) }
+      Factory(:apartment, building: @building, visited: false)
+      @building.apartments.length.should eq(4)
+      @building.apartments.visited.length.should eq(3)
+      @building.coverage.should eq(75)
+    end
   end
 
 end

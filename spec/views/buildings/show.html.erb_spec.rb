@@ -8,6 +8,7 @@ describe "buildings/show" do
       :description => "MyText",
       :territory => nil
     ))
+    @apartments = []
   end
 
   it "renders attributes in <p>" do

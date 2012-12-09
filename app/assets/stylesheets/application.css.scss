@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+.control-group textarea {
+  height: 100px;
+}
+
+#apartment_last_visited_3i {
+  width: 50px;
+}
+
+#apartment_last_visited_2i {
+  width: 150px;
+}
+
+#apartment_last_visited_1i {
+  width: 100px;
+}
+
+.coverage {
+  width: 80%;
+  background: #eee;
+  padding: 10px;
+  float:left;
+  border-radius: 5px;
+  line-height: 10px;
+  height: 10px;
+  color: gray;
+  
+  .bar {
+    background: red;
+    width: 80%;
+    height: 10px;
+    float:left;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+  
+  .progress {
+    background: green;
+    height: 10px;
+    float: left;
+    border-radius: 5px;
+  }
+}

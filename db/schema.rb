@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620023512) do
+ActiveRecord::Schema.define(:version => 20121209184325) do
 
   create_table "apartments", :force => true do |t|
     t.string   "number"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(:version => 20120620023512) do
     t.text     "notes"
     t.date     "last_visited"
     t.integer  "building_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "visited",      :default => true
+    t.boolean  "revisit",      :default => true
   end
 
   add_index "apartments", ["building_id"], :name => "index_apartments_on_building_id"
