@@ -47,6 +47,7 @@
           <a class="brand" href="/">JWService</a>
           <div class="container nav-collapse">
             <ul class="nav">
+              <li><%= link_to t(:schedule), schedule_path  %></li>
               <li><%= link_to t(:buildings), buildings_path  %></li>
               <li><%= link_to t(:territories), territories_path  %></li>
             </ul>
@@ -66,6 +67,7 @@
               <h3><%= t(:sidebar)%></h3>
               <ul class="nav nav-list">
                 <li class="nav-header"><%= t(:sidebar)%></li>
+                <li><%= link_to t(:schedule), schedule_path  %></li>
                 <li><%= link_to t(:buildings), buildings_path  %></li>
                 <li><%= link_to t(:territories), territories_path  %></li>
               </ul>
