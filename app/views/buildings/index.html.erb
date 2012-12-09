@@ -6,10 +6,9 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:address) %></th>
-      <th><%= model_class.human_attribute_name(:number) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:territory_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th class="center"><%= model_class.human_attribute_name(:number) %></th>
+      <th class="center"><%= model_class.human_attribute_name(:apartments) %></th>
+      <th><%= model_class.human_attribute_name(:coverage) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -17,10 +16,10 @@
     <% @buildings.each do |building| %>
       <tr>
         <td><%= link_to building.address, building_path(building) %></td>
-        <td><%= building.number %></td>
-        <td><%= building.description %></td>
-        <td><%= building.territory_id %></td>
-        <td><%=l building.created_at %></td>
+        <td class="center"><%= building.number %></td>
+        <td class="center"><%= building.apartments.length %></td>
+        <td><%= render partial: 'coverage', locals: { building: building } %></td>
+        
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_building_path(building), :class => 'btn btn-mini' %>
