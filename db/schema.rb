@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121209184325) do
+ActiveRecord::Schema.define(:version => 20121209215950) do
 
   create_table "apartments", :force => true do |t|
     t.string   "number"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20121209184325) do
     t.datetime "updated_at",                     :null => false
     t.boolean  "visited",      :default => true
     t.boolean  "revisit",      :default => true
+    t.datetime "next_revisit"
   end
 
   add_index "apartments", ["building_id"], :name => "index_apartments_on_building_id"

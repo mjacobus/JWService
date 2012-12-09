@@ -23,6 +23,13 @@
   </div>
   
   <div class="control-group">
+    <%= f.label :next_revisit, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :next_revisit, :class => 'date_select', :include_blank => true %>
+    </div>
+  </div>
+  
+  <div class="control-group">
     <%= f.label :owner, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :owner, :class => 'text_field' %>
@@ -49,7 +56,7 @@
   <div class="control-group">
     <%= f.label :last_visited, :class => 'control-label' %>
     <div class="controls">
-      <%= f.date_select :last_visited, :class => 'date_select' %>
+      <%= f.date_select :last_visited, :class => 'date_select', :include_blank => true %>
     </div>
   </div>
 

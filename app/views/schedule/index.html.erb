@@ -1,0 +1,17 @@
+<h1><%= t('view.schedule') %></h1>
+
+<table class="table table-striped">
+  <tr>
+    <th><%= Apartment.human_attribute_name(:address) %></th>
+    <th><%= Apartment.human_attribute_name(:last_visited) %></th>
+    <th><%= Apartment.human_attribute_name(:next_revisit) %></th>
+  </tr>
+  
+<% @apartments.each do |apartment| %>
+  <tr class="<%= schedule_date_class apartment %>">
+    <td class=""><%= link_to("#{apartment.building.address}, #{apartment.building.number}, Ap: #{apartment.number}", edit_building_apartment_path(apartment.building, apartment)) %></td>
+    <td class="center"><%= l(apartment.last_visited) if apartment.last_visited %></td>
+    <td class="center"><%= l(apartment.next_revisit, format: :short) if apartment.next_revisit %></td>
+  </tr>
+<% end %>
+</table>
