@@ -203,5 +203,37 @@ pt-BR:
     errors:
       <<: *errors
   activerecord:
+    models:
+      schedule: Agenda
+      building: Prédios
+      territory: Território
+      apartment: Apartamento
+    attributes:
+      apartment:
+        number: Número
+        visited: Visitado
+        revisit: Revisitar
+        notes: Observações
+        last_visited: Última Visita
+      territory:
+        name: Nome
+        description: Descrição
+      building:
+        number: Número
+        address: Endereço
+        apartments: Apartamentos
+        coverage: Cobertura
+        description: Descrição
+        territory: Território
     errors:
       <<: *errors
+
+  helpers:
+    titles:
+      edit: Editar %{model}
+    actions: Ações
+    links:
+      cancel: Cancelar
+      edit: Editar
+      destroy: Excluir
+      confirm: Tem certeza que deseja excluir este registro?
